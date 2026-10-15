@@ -1,0 +1,118 @@
+name: "🔬 Research Task"
+description: Propose or track a research task — literature reviews, analysis, drafting documents, writing papers, and more.
+title: "[Research]: "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for any research-related task. Select the task type below and fill in the sections that are relevant — not all sections will apply to every task.
+
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task Type
+      description: What kind of research task is this?
+      options:
+        - Literature Review
+        - Document Drafting (interview guide, survey, protocol, etc.)
+        - Writing / Paper
+        - Analysis (qualitative, quantitative, or mixed methods)
+        - Data Collection / Fieldwork
+        - Theoretical Work
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A brief overview of the task and what it aims to accomplish.
+      placeholder: One or two sentences describing the task and its purpose.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Motivation
+      description: Why is this task needed? How does it fit into the broader research project?
+      placeholder: |
+        - Research question or project goal this supports: ...
+        - Why now: ...
+        - How it connects to other ongoing work: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Approach
+      description: Describe the planned approach. Adapt this section to the task type.
+      placeholder: |
+        Examples by task type:
+
+        Literature review: Search strategy, databases, inclusion/exclusion criteria, time period.
+        Document drafting: Type of document, target audience, key themes or topics to cover.
+        Writing / paper: Target venue or journal, outline or structure, co-authors.
+        Analysis: Data sources, analytical framework or method, tools (NVivo, SPSS, R, etc.).
+        Data collection: Participant recruitment, sampling strategy, ethical considerations.
+        Theoretical work: Concepts or frameworks being developed, key literature to engage with.
+    validations:
+      required: false
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables & Definition of Done
+      description: What are the concrete outputs of this task? How will we know it's complete?
+      placeholder: |
+        - [ ] e.g., Annotated bibliography with 30+ sources
+        - [ ] e.g., Draft interview guide reviewed by PI
+        - [ ] e.g., Completed thematic analysis with codebook
+        - [ ] e.g., First draft of methods section submitted for feedback
+    validations:
+      required: true
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline & Milestones
+      description: Any deadlines, milestones, or dependencies to be aware of?
+      placeholder: |
+        - Deadline: ...
+        - Milestones: ...
+        - Blocks / prerequisite for: #issue_number
+        - Blocked by / depends on: #issue_number
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References & Resources
+      description: Link to relevant papers, documents, prior issues, shared drives, or other resources.
+      placeholder: |
+        - Key papers: ...
+        - Shared folder: ...
+        - Related issues: #...
+        - Ethics approval: ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Anything else — ethical considerations, access constraints, collaboration notes, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have checked for duplicate or related tasks.
+          required: true

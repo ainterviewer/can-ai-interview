@@ -1,0 +1,85 @@
+name: "📊 Data Issue"
+description: Report a problem with data quality, labeling, availability, or request new data collection.
+title: "[Data]: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for anything data-related — quality issues, missing data, labeling errors, annotation requests, or new data needs.
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Data Issue Type
+      description: What kind of data issue is this?
+      options:
+        - Quality issue (corrupt, noisy, inconsistent)
+        - Labeling / annotation error
+        - Missing data or incomplete coverage
+        - New data collection request
+        - Data pipeline or processing bug
+        - Access or permissions issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the data issue in detail.
+      placeholder: Describe the problem or request...
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-data
+    attributes:
+      label: Affected Dataset / Source
+      description: Which dataset, split, or data source is affected?
+      placeholder: |
+        - Dataset: dataset_v3
+        - Split: train
+        - Source: internal annotation pipeline
+        - Affected samples: IDs 1042–1087 (approx.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: How does this issue affect downstream work (training, evaluation, analysis)?
+      placeholder: "e.g., Mislabeled samples in the validation set inflate accuracy by ~1.5%."
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed-fix
+    attributes:
+      label: Proposed Fix or Action
+      description: If you have a suggestion for how to resolve this, describe it here.
+      placeholder: |
+        - Re-annotate affected samples using guideline v2.
+        - Filter out samples with confidence < 0.5.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context — scripts that detected the issue, related experiments, links.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have identified the specific dataset and scope of the issue.
+          required: true
+        - label: I have checked whether this is a known issue.
+          required: true

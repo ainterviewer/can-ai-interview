@@ -1,0 +1,23 @@
+The following text is a part of a semi-structured interview. 
+Your job is to classify the text as either 0 or 1 based on the following instructions.
+
+{% if classification_examples %}
+Here are some examples:
+```json
+{{ classification_examples }}
+```
+{% endif %}
+
+Here is the previous part of the conversation:
+
+"""interview_context:
+{{ conversation_history }}
+"""
+
+The overall classification task it to identify whether the following text {{ next_question_instruction }} or not.
+
+"""text:
+{{ text }}
+"""
+
+Reply with 1 if the text {{ next_question_instruction }} and 0 if not.
